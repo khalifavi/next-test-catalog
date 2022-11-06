@@ -34,14 +34,14 @@ const reducer = (state: State = {
 
 const makeStore = (context: Context) => configureStore({ reducer: rootReducer, middleware });
 
-export const wrapper = createWrapper<Store<State>>(makeStore, { debug: true });
+// export const wrapper = createWrapper<Store<State>>(makeStore, { debug: true });
 
-// initial states here
-const initialState = {}
+// // initial states here
+// const initialState = {}
 
-// creating store
-export const store = createStore(
-    rootReducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(...middleware))
-)
+// // creating store
+// export const store = createStore(
+//     rootReducer,
+//     initialState,
+//     composeWithDevTools(applyMiddleware(...middleware))
+// )
