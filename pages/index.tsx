@@ -34,7 +34,7 @@ export default function Catalog({
               <a href={`/product/${item.id}`} className={styles.card}>
                 <Image key={item.id} src={item.images[0].small.url} alt={`Image of ${item.name}`} width={250} height={250} />
                 {" "}
-                <h4>{item.name}</h4> <p><span className={styles.price}>{formatCurrency(item.price)}</span> <span className={styles.discounted}>{formatCurrency(item.discountedPrice)}</span></p>{" "} {percentOff(item.price, item.discountedPrice)} off{" "}
+                <h4>{item.name}</h4> <p><span className={styles.price}>{formatCurrency(item.price)}</span> <span className={styles.discounted}>{formatCurrency(item.discountedPrice)}</span>{" "} <span className={styles.off}>{percentOff(item.price, item.discountedPrice)} off{" "}</span> </p>
               </a>
             ))}
           </div>
