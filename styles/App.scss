@@ -1,0 +1,160 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header.catalog-container-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 3px 5px;
+
+  .navbar-wrapper {
+    padding-top: 8px;
+    background-color: white;
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+
+      .nav-left,
+      .nav-right {
+        ul {
+          display: inline-block;
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+
+          li {
+            float: left;
+            margin: 0 8px;
+
+            &::after {
+              content: '|';
+              margin-left: 16px;
+            }
+            &:last-child::after {
+              content: '';
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+            &:first-child {
+              margin-left: 0;
+            }
+
+            a {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .nav-right {
+
+      }
+    }
+  }
+
+  .search-wrapper {
+    padding: 8px 0;
+  }
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 1.5rem;
+  text-align: start !important;
+
+  a {
+    color: #0070f3;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  // display: flex;
+  flex: 1;
+  padding: 1rem 0;
+  border-top: 1px solid #eaeaea;
+
+  hr {
+    border: 0;
+    border-top: 1px solid #eaeaea;
+  }
+
+  a {
+    display: flex;
+    flex-grow: 1;
+    font-size: .9rem;
+  }
+  .link-wrapper {
+    display: flex;
+
+
+    ul.link-block {
+      width: 200px;
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        margin: 8px 0;
+        font-size: .8rem;
+
+        &.list-header {
+          font-size: .9rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+
+    body {
+      color: white;
+      background: black;
+    }
+  }
+}
