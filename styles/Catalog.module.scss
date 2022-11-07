@@ -29,6 +29,7 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 250px;
+  padding-bottom: 8px;
 
   &:hover,
   &:focus,
@@ -64,6 +65,8 @@
   }
 
   .off {
+    margin-left: .5rem;
+    color: crimson;
     font-size: .8rem;
   }
 }

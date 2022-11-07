@@ -23,7 +23,7 @@ export default function CatalogDetail({
       <Navbar />
       <div className='container'>
         <Head>
-          <title key='title'>Detail of { product.name }</title>
+          <title key='title'>Detail of {product.name}</title>
           <meta name="description" content={`Detail of ${product.name}`} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -31,22 +31,28 @@ export default function CatalogDetail({
         <main className={'main ' + styles['product-detail-container']}>
           <Image key={product.id} src={product.images[0].small.url} alt={`Image of ${product.name}`} width={250} height={250} />
           <div className={styles.grid}>
-                <h1 className={styles.title}>{ product.name }</h1>
-                <p><span className={styles.price}>{formatCurrency(product.price)}</span> <span className={styles.discounted}>{formatCurrency(product.discountedPrice)}</span></p>{" "} {percentOff(product.price, product.discountedPrice)} off
-                {product.variance.map((variant) => {
-                  return <>
-                    <label htmlFor={variant.label}>Choose a {variant.label}:</label>
-                    <select name={variant.label} id={variant.label}>
-                      {variant.values.map((value) => {
-                        return <option value={value}>{value}</option>
-                      })}
-                    </select>
-                  </>
-                })}
+            <h1 className={styles.title}>{product.name}</h1>
+            <p>
+              <span className={styles.discounted}>{formatCurrency(product.discountedPrice)}</span>
+              <div>
+                <span className={styles.price}>{formatCurrency(product.price)}</span>
+                <span className={styles.off}>{percentOff(product.price, product.discountedPrice)} off</span>
+              </div>
+            </p>
+            {product.variance.map((variant) => {
+              return <>
+                <label htmlFor={variant.label}>Choose a {variant.label}:</label>
+                <select name={variant.label} id={variant.label}>
+                  {variant.values.map((value) => {
+                    return <option value={value}>{value}</option>
+                  })}
+                </select>
+              </>
+            })}
           </div>
         </main>
 
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
